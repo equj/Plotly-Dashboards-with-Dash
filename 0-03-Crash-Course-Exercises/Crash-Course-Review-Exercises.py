@@ -1,5 +1,5 @@
 ##################################################################
-####### Crash Course Review Exercises 
+####### Crash Course Review Exercises
 #########################################################
 
 #########################################################
@@ -11,12 +11,13 @@
 # TASK 1: Import pandas and numpy
 ######
 
-
+import pandas as pd
+import numpy as np
 
 #######
 # TASK 2: Set Numpy's random number generator seed to 101
 ######
-
+np.random.seed(101)
 
 
 #######
@@ -24,22 +25,21 @@
 #         random integers from 1-100. (Keep in mind that the upper
 #         limit may be exclusive.)
 ######
-
-
+mat = np.random.randint(1, 100, 500).reshape(100, 5)
 
 #######
 # TASK 4: Now use pd.DataFrame() to read in this numpy array as a dataframe.
 #         Simple pass in the numpy array into that function to get back a
 #         dataframe. Pandas will auto label the columns to 0-4
 ######
-
-
+df = pd.DataFrame(data=mat)
 
 #######
 # TASK 5: Using your previously created DataFrame, use [df.columns = [...]]
 #         (https://stackoverflow.com/questions/11346283/renaming-columns-in-pandas)
 #         to rename the pandas columns to be ['f1','f2','f3','f4','label'].
 ######
+df.columns = ['f1','f2','f3','f4','label']
 
 
 
@@ -52,3 +52,6 @@
 #         between 0 and 100. (Hint: Use numpy to create the numbers, then pass
 #         it in to pd.DataFrame(), check out the data= and index= parameters
 #         for that call.)
+mat2 = np.random.randint(0, 100, 200).reshape(50, 4)
+df2 = pd.DataFrame(data = mat2, columns = ['A','B','C','D'])
+print(df2.head())
