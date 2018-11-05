@@ -8,21 +8,25 @@
 ######
 
 # Perform imports here:
-
-
+import pandas as pd
+import plotly.figure_factory as ff
+import plotly.graph_objs as go
+import plotly.offline as pyo
 
 # Create a DataFrame from  "flights" data
 df = pd.read_csv('../data/flights.csv')
 
 # Define a data variable
-
-
-
-
-
-
+data = [go.Heatmap(
+    x = df['year'],
+    y = df['month'],
+    z = df['passengers'],
+    colorscale = 'Jet'
+    )]
 # Define the layout
-
+layout = go.Layout(title = 'Flights Data')
 
 
 # Create a fig from data and layout, and plot the fig
+fig = go.Figure(data = data, layout = layout)
+pyo.plot(fig, filename='flights.html')
