@@ -37,7 +37,7 @@ app.layout = html.Div([
     [Input('my_ticker_symbol', 'value')])
 def update_graph(stock_ticker):
     start = datetime(2017, 1, 1)
-    end = datetime(2017, 12, 31)
+    end = datetime(2019, 1, 7)
     df = web.DataReader(stock_ticker,'iex',start,end)
     fig = {
         'data': [

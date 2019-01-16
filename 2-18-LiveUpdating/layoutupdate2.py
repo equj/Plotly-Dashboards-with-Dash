@@ -12,7 +12,7 @@ app.layout = html.Div([
     html.H1(id='live-update-text'),
     dcc.Interval(
         id='interval-component',
-        interval=2000, # 2000 milliseconds = 2 seconds
+        interval=500, # 2000 milliseconds = 2 seconds
         n_intervals=0
     )
 ])

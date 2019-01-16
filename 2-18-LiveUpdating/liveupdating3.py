@@ -26,7 +26,7 @@ app.layout = html.Div([
     dcc.Graph(id='live-update-graph',style={'width':1200}),
     dcc.Interval(
         id='interval-component',
-        interval=6000, # 6000 milliseconds = 6 seconds
+        interval=2000, # 6000 milliseconds = 6 seconds
         n_intervals=0
     )])
 ])

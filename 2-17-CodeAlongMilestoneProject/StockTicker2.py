@@ -23,11 +23,9 @@ app.layout = html.Div([
     ),
     dcc.Graph(
         id='my_graph',
-        figure={
-            'data': [
+        figure={'data': [
                 {'x': [1,2], 'y': [3,1]}
-            ]
-        }
+            ], 'layout':{'title':'Default Title'}}
     )
 ])
 @app.callback(
